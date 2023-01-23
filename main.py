@@ -2,7 +2,11 @@ from requests import get
 
 r = get('https://www.cbr-xml-daily.ru/daily_json.js').json()
 def convert(cur : int, valute : str) -> int:
-    res = cur * r['Valute'][valute]['Value'] 
-    return res
+    try:
+        res = cur * r['Valute'][valute]['Value'] 
+        return res
+    except (ValueError, KeyError):
+        return 'Ошибка'
 
-print(convert(int(input()), input().upper()))
+while:
+    print(convert(int(input()), input().upper()))
