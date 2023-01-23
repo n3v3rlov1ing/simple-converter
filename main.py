@@ -8,5 +8,5 @@ def convert(cur : int, valute : str) -> int:
     except (ValueError, KeyError):
         return 'Ошибка'
 
-while:
+while True:
     print(convert(int(input()), input().upper()))
